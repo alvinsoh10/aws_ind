@@ -27,5 +27,5 @@ resource "aws_subnet" "subnet3" {
 
 resource "aws_elasticache_subnet_group" "elasticache-subnet-group" {
   name = "elasticache-subnet-group"
-  subnet_ids = [aws_subnet.subnet1, aws_subnet.subnet2, aws_subnet.subnet3]
+  subnet_ids = [aws_subnet.subnet1.id, aws_subnet.subnet2.id, aws_subnet.subnet3.id]
 }
