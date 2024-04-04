@@ -1,5 +1,5 @@
 resource "aws_opensearch_domain" "opensearch_tf" {
-  domain_name = "opensearch_tf"
+  domain_name = "opensearch-tf"
   engine_version = "Elasticsearch_7.0"
 
   cluster_config {
