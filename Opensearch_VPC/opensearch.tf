@@ -2,7 +2,7 @@ resource "aws_opensearch_domain" "test-vpc-os" {
   domain_name = "os-tf-vpc"
   engine_version = "Opensearch_2.11"
   cluster_config {
-    instance_type = 2
+    instance_type = "t3.small.search"
   }
   vpc_options {
     subnet_ids = [
