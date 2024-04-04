@@ -11,6 +11,11 @@ resource "aws_opensearch_domain" "test-vpc-os" {
     ]
     security_group_ids = ["sg-0487554c2b69bf6b7"]
   }
+  ebs_options {
+    volume_size = 10
+    volume_type = "gp3"
+    ebs_enabled = true
+  }
   tags = {
     Name = "test-os-vpc"
   }
