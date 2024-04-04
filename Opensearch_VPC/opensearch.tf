@@ -3,6 +3,7 @@ resource "aws_opensearch_domain" "test-vpc-os" {
   engine_version = "OpenSearch_2.11"
   cluster_config {
     instance_type = "t3.small.search"
+    instance_count = 2
     zone_awareness_config {
       availability_zone_count = 2
     }
