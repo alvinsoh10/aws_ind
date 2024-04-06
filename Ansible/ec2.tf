@@ -1,9 +1,9 @@
 data "aws_ami" "ami_name" {
   most_recent = true
-  owners = "amazon"
+  owners = ["amazon"]
   filter {
     name = "architecture"
-    values = "arm64"
+    values = ["arm64"]
   }
 }
 resource "aws_instance" "name" {
