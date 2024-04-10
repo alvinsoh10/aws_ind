@@ -17,5 +17,13 @@ resource "aws_ecs_task_definition" "task_mysql" {
             hostPort = 3306
         }
     ]
+    log_configuration = {
+      logDriver = "awslogs"
+      options = {
+        "awslogs-group" = "fargate-logs-test"
+        "awslogs-region" = "ap-southeast-1"
+        "awslogs-stream-prefix" = "ecs"
+      }
+    }
   }])
 }
