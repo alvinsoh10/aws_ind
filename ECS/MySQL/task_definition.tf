@@ -1,4 +1,4 @@
-resource "aws_ecs_task_definition" "name" {
+resource "aws_ecs_task_definition" "task_mysql" {
   family = "service"
   
   container_definitions = jsonencode([{
