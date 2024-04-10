@@ -1,7 +1,7 @@
 resource "aws_ecs_task_definition" "name" {
   family = "service"
   
-  container_definitions = jsonencode({
+  container_definitions = jsonencode([{
     name = "first"
     image = "mysql"
     cpu = 1
@@ -13,7 +13,7 @@ resource "aws_ecs_task_definition" "name" {
             hostPort = 3306
         }
     ]
-  })
+  }])
 
   volume {
     name = "service-storage"
