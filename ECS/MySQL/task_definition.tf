@@ -4,6 +4,7 @@ resource "aws_ecs_task_definition" "task_mysql" {
   cpu = 1024
   memory = 2048
   network_mode = "awsvpc"
+  task_role_arn = "arn:aws:iam::240835895323:role/ecsTaskExecutionRole"
   container_definitions = jsonencode([{
     name = "first"
     image = "mysql"
