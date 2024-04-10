@@ -1,11 +1,13 @@
 resource "aws_ecs_task_definition" "task_mysql" {
   family = "service"
   requires_compatibilities = ["FARGATE"]
-  
+  cpu = 1024
+  memory = 2048
+
   container_definitions = jsonencode([{
     name = "first"
     image = "mysql"
-    cpu = 1
+    cpu = 1024
     memory = 2048
     essential = true
     portMappings = [
