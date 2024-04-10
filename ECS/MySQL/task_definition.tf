@@ -1,5 +1,6 @@
 resource "aws_ecs_task_definition" "task_mysql" {
   family = "service"
+  requires_compatibilities = ["FARGATE"]
   
   container_definitions = jsonencode([{
     name = "first"
