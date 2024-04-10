@@ -17,6 +17,10 @@ resource "aws_ecs_task_definition" "task_mysql" {
             hostPort = 3306
         }
     ]
+    environment = [
+      name = "MYSQL_ROOT_PASSWORD"
+      value = "test"
+    ]
     log_configuration = {
       logDriver = "awslogs"
       options = {
