@@ -18,8 +18,10 @@ resource "aws_ecs_task_definition" "task_mysql" {
         }
     ]
     environment = [
-      name = "MYSQL_ROOT_PASSWORD"
-      value = "test"
+      {
+        name = "MYSQL_ROOT_PASSWORD",
+        value = "test"
+      }
     ]
     log_configuration = {
       logDriver = "awslogs"
