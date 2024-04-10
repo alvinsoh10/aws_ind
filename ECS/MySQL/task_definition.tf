@@ -17,11 +17,6 @@ resource "aws_ecs_task_definition" "task_mysql" {
         }
     ]
   }])
-
-  volume {
-    name = "service-storage"
-    host_path = "/ecs/service-storage"
-  }
    placement_constraints {
      type = "memberOf"
      expression = "attribute:ecs.availability-zone in [ap-southeast-1a, ap-southeast-1b]"
