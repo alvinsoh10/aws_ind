@@ -17,8 +17,4 @@ resource "aws_ecs_task_definition" "task_mysql" {
         }
     ]
   }])
-   placement_constraints {
-     type = "memberOf"
-     expression = "attribute:ecs.availability-zone in [ap-southeast-1a, ap-southeast-1b]"
-   }
 }
