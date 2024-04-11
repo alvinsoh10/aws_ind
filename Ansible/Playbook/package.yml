@@ -1,0 +1,16 @@
+---
+- name: Install MySQL
+  hosts: mysql
+  become: yes
+  tasks:
+    - name: Install MySQL Server
+      yum: 
+        name: mysql
+        state: present
+        use_backend: yum
+
+    - name: Start MySQL Server
+      service:
+        name: mysql
+        state: started
+        enabled: yes
