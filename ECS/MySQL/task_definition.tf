@@ -7,7 +7,7 @@ resource "aws_ecs_task_definition" "task_mysql" {
   task_role_arn = "arn:aws:iam::240835895323:role/ecsTaskExecutionRole"
   execution_role_arn = "arn:aws:iam::240835895323:role/ecsTaskExecutionRole"
   container_definitions = <<TASK_DEFINITION
-[
+  [
     {
       "name" : "first",
       "image" : "mysql",
@@ -33,6 +33,6 @@ resource "aws_ecs_task_definition" "task_mysql" {
         }
       }
     }
-]
-TASK_DEFINITION
+  ]
+  TASK_DEFINITION
 }
