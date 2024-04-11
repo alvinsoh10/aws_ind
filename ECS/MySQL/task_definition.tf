@@ -3,7 +3,7 @@ resource "aws_ecs_task_definition" "task_mysql" {
   requires_compatibilities = ["FARGATE"]
   cpu = 1024
   memory = 2048
-  network_mode = "awsvpc"
+  network_mode = var.network_mode
   task_role_arn = "arn:aws:iam::240835895323:role/ecsTaskExecutionRole"
   execution_role_arn = "arn:aws:iam::240835895323:role/ecsTaskExecutionRole"
   container_definitions = <<DEFINITION
@@ -14,7 +14,7 @@ resource "aws_ecs_task_definition" "task_mysql" {
       "essential" : true,
       "portMappings" : [
           {
-              "containerPort" : 3306,
+              "containerPort" : "${var.porticle},
               "hostPort" : 3306
           }
       ],
