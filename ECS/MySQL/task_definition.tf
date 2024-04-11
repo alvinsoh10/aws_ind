@@ -25,7 +25,7 @@ resource "aws_ecs_task_definition" "task_mysql" {
             "value" : "test"
           }
         ],
-        "log_configuration" : [{
+        "log_configuration" : {
           "logDriver" : "awslogs",
           "options" : {
             "awslogs-create-group" : "true",
@@ -33,7 +33,7 @@ resource "aws_ecs_task_definition" "task_mysql" {
             "awslogs-region" : "ap-southeast-1",
             "awslogs-stream-prefix" : "ecs",
           }
-        }]
+        }
       }
   ]
   TASK_DEFINITION
