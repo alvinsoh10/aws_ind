@@ -27,7 +27,7 @@ resource "aws_ecs_task_definition" "task_mysql" {
       "logConfiguration" : {
         "logDriver" : "awslogs",
         "options" : {
-          "awslogs-group" : "fargate-logs-test",
+          "awslogs-group" : "/ecs/service",
           "awslogs-region" : "ap-southeast-1",
           "awslogs-stream-prefix" : "ecs"
         }
