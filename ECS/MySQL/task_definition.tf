@@ -14,7 +14,7 @@ resource "aws_ecs_task_definition" "task_mysql" {
       "essential" : true,
       "portMappings" : [
           {
-              "containerPort" : "${var.porticle},
+              "containerPort" : ${var.porticle},
               "hostPort" : 3306
           }
       ],
