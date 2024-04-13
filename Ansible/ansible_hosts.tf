@@ -3,5 +3,5 @@ resource "local_file" "tf_ansible_hosts" {
     [mysql]
     ${aws_instance.name.private_ip}
   DOC
-  filename = "/etc/ansible/tf_ansible_hosts.yml"
+  filename = "./tf_ansible_hosts.yml"
 }
