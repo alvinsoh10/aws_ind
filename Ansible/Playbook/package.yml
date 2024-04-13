@@ -5,15 +5,24 @@
     ansible_python_interpreter: /usr/bin/python3 
   become: yes
   tasks:
-
     - name: Install MySQL Server
-      yum: 
+      apt: 
         name: mysql
         state: present
-        use_backend: yum
 
     - name: Start MySQL Server
       service:
         name: mysql
         state: started
         enabled: yes
+
+- name: Add MySQL User
+  hosts: mysql
+  become: yes
+  tasks:
+    - name: Create Database User
+      mysql_user:
+        name: test
+        password: test
+        priv: '*.*:ALL'
+        state: present
