@@ -11,4 +11,5 @@ resource "aws_instance" "name" {
   instance_type = "t4g.micro"
   subnet_id = "subnet-0a1e0c2d5fc7efcb6"
   key_name = "alvin-keypair"
+  vpc_security_group_ids = "sg-0487554c2b69bf6b7"
 }
