@@ -1,4 +1,11 @@
 ---
+- name: Update apt
+  hosts: mysql
+  become: yes
+  apt:
+    upgrade: yes
+    update_cache: yes
+
 - name: Install MySQL
   hosts: mysql
   vars:
