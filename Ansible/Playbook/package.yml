@@ -8,6 +8,15 @@
         upgrade: yes
         update_cache: yes
 
+- name: install pip3
+  hosts: mysql
+  become: yes
+  tasks:
+    - name: APT Update
+      apt: 
+        name: python3-pip
+        state:present 
+
 - name: Make sure pymysql is present
   become: true # needed if the other tasks are not played as root
   hosts: mysql
