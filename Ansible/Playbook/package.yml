@@ -43,13 +43,14 @@
         state: started
         enabled: yes
 
-- name: Add MySQL User
+- name: Set password for root user
   hosts: mysql
   become: yes
   tasks:
     - name: Create Database User
       mysql_user:
-        name: test
+        name: root
         password: test
-        priv: '*.*:ALL'
+        priv: '*.*:ALL,GRANT'
+        login_unix_socket: /var/run/mysqld/mysqld.sock
         state: present
