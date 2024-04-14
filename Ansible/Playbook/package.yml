@@ -7,7 +7,7 @@
   tasks:
     - name: Install MySQL Server
       apt: 
-        name: mysql-server
+        name: default-mysql-server
         state: present
 
     - name: Start MySQL Server
