@@ -22,8 +22,8 @@
   become: yes
   tasks:
     - name: install mysql
-      pip:
-        name: pymysql
+      apt:
+        name: python3-pymysql
         state: present
 
 - name: Install MySQL
