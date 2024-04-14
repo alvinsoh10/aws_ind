@@ -8,6 +8,13 @@
         upgrade: yes
         update_cache: yes
 
+- name: Make sure pymysql is present
+  become: true # needed if the other tasks are not played as root
+  tasks:
+    pip:
+      name: pymysql
+      state: present
+
 - name: Install MySQL
   hosts: mysql
   vars:
