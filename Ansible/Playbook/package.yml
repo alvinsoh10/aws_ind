@@ -11,9 +11,10 @@
 - name: Make sure pymysql is present
   become: true # needed if the other tasks are not played as root
   tasks:
-    pip:
-      name: pymysql
-      state: present
+    -name: install mysql
+      pip:
+        name: pymysql
+        state: present
 
 - name: Install MySQL
   hosts: mysql
